@@ -13,9 +13,4 @@ target 'PrimeWords' do
     inherit! :search_paths
     # Pods for testing
   end
-
-  target 'PrimeWordsUITests' do
-    # Pods for testing
-  end
-
 end
