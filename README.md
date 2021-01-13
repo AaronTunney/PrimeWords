@@ -59,16 +59,16 @@ The architecture of the solution is as follows:
 
 ### General
 
-[x] Basic app structure
+- [x] Basic app structure
 
 ### Interface
 
-[ ] List of files view
-[ ] Progress view
-[ ] Results view
-[ ] Display primes
+- [ ] List of files view
+- [ ] Progress view
+- [ ] Results view
+- [ ] Display primes
 
 ### Engine
 
-[ ] Analyse chunk
-[ ] Read whole book
+- [ ] Analyse chunk
+- [ ] Read whole book

@@ -16,6 +16,7 @@
 		5374B34525AF248300F413DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5374B34325AF248300F413DD /* LaunchScreen.storyboard */; };
 		5374B35025AF248300F413DD /* PrimeWordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B34F25AF248300F413DD /* PrimeWordsTests.swift */; };
 		5374B37525AF274B00F413DD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5374B37425AF274B00F413DD /* README.md */; };
+		5374B39225AF33BB00F413DD /* OSLog+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B39125AF33BB00F413DD /* OSLog+Category.swift */; };
 		D1E4FB5059868D8823780563 /* Pods_PrimeWordsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6B110AD59DE45B37C400E0 /* Pods_PrimeWordsTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		5374B34F25AF248300F413DD /* PrimeWordsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeWordsTests.swift; sourceTree = "<group>"; };
 		5374B35125AF248300F413DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5374B37425AF274B00F413DD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5374B39125AF33BB00F413DD /* OSLog+Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSLog+Category.swift"; sourceTree = "<group>"; };
 		8A8ECE7BDB46358A0654B2C8 /* Pods-PrimeWords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimeWords.release.xcconfig"; path = "Target Support Files/Pods-PrimeWords/Pods-PrimeWords.release.xcconfig"; sourceTree = "<group>"; };
 		C5B7E32EDA714A4F99DBDF37 /* Pods_PrimeWords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimeWords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E80E3D0048B8A8A810E0741C /* Pods-PrimeWordsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimeWordsTests.release.xcconfig"; path = "Target Support Files/Pods-PrimeWordsTests/Pods-PrimeWordsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,11 +114,10 @@
 			children = (
 				5374B33825AF248000F413DD /* AppDelegate.swift */,
 				5374B33A25AF248000F413DD /* SceneDelegate.swift */,
-				5374B33C25AF248000F413DD /* ViewController.swift */,
-				5374B33E25AF248000F413DD /* Main.storyboard */,
-				5374B34125AF248300F413DD /* Assets.xcassets */,
-				5374B34325AF248300F413DD /* LaunchScreen.storyboard */,
-				5374B34625AF248300F413DD /* Info.plist */,
+				5374B38725AF32E300F413DD /* User Stories */,
+				5374B38925AF330300F413DD /* Common */,
+				5374B38A25AF330C00F413DD /* Services */,
+				5374B38B25AF331C00F413DD /* Resources */,
 			);
 			path = PrimeWords;
 			sourceTree = "<group>";
@@ -128,6 +129,80 @@
 				5374B35125AF248300F413DD /* Info.plist */,
 			);
 			path = PrimeWordsTests;
+			sourceTree = "<group>";
+		};
+		5374B38725AF32E300F413DD /* User Stories */ = {
+			isa = PBXGroup;
+			children = (
+				5374B38C25AF335000F413DD /* Home */,
+			);
+			path = "User Stories";
+			sourceTree = "<group>";
+		};
+		5374B38925AF330300F413DD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5374B39025AF33A600F413DD /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		5374B38A25AF330C00F413DD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5374B38B25AF331C00F413DD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5374B33E25AF248000F413DD /* Main.storyboard */,
+				5374B34125AF248300F413DD /* Assets.xcassets */,
+				5374B34325AF248300F413DD /* LaunchScreen.storyboard */,
+				5374B34625AF248300F413DD /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5374B38C25AF335000F413DD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5374B38F25AF337100F413DD /* View */,
+				5374B38E25AF336A00F413DD /* View Model */,
+				5374B38D25AF336400F413DD /* Router */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		5374B38D25AF336400F413DD /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		5374B38E25AF336A00F413DD /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		5374B38F25AF337100F413DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5374B33C25AF248000F413DD /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5374B39025AF33A600F413DD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5374B39125AF33BB00F413DD /* OSLog+Category.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		FCDCBB6C8B3710AACE93E612 /* Frameworks */ = {
@@ -327,6 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5374B39225AF33BB00F413DD /* OSLog+Category.swift in Sources */,
 				5374B33D25AF248000F413DD /* ViewController.swift in Sources */,
 				5374B33925AF248000F413DD /* AppDelegate.swift in Sources */,
 				5374B33B25AF248000F413DD /* SceneDelegate.swift in Sources */,
@@ -495,7 +571,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q8D8L92B5Y;
-				INFOPLIST_FILE = PrimeWords/Info.plist;
+				INFOPLIST_FILE = PrimeWords/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -515,7 +591,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q8D8L92B5Y;
-				INFOPLIST_FILE = PrimeWords/Info.plist;
+				INFOPLIST_FILE = PrimeWords/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
