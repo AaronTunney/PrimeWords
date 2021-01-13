@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20E6A47E848835E9F3965C18 /* Pods_PrimeWords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B7E32EDA714A4F99DBDF37 /* Pods_PrimeWords.framework */; };
 		5374B33925AF248000F413DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B33825AF248000F413DD /* AppDelegate.swift */; };
 		5374B33B25AF248000F413DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B33A25AF248000F413DD /* SceneDelegate.swift */; };
 		5374B33D25AF248000F413DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B33C25AF248000F413DD /* ViewController.swift */; };
@@ -14,7 +15,8 @@
 		5374B34225AF248300F413DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5374B34125AF248300F413DD /* Assets.xcassets */; };
 		5374B34525AF248300F413DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5374B34325AF248300F413DD /* LaunchScreen.storyboard */; };
 		5374B35025AF248300F413DD /* PrimeWordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B34F25AF248300F413DD /* PrimeWordsTests.swift */; };
-		5374B35B25AF248300F413DD /* PrimeWordsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B35A25AF248300F413DD /* PrimeWordsUITests.swift */; };
+		5374B37525AF274B00F413DD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5374B37425AF274B00F413DD /* README.md */; };
+		D1E4FB5059868D8823780563 /* Pods_PrimeWordsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6B110AD59DE45B37C400E0 /* Pods_PrimeWordsTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,16 +27,11 @@
 			remoteGlobalIDString = 5374B33425AF248000F413DD;
 			remoteInfo = PrimeWords;
 		};
-		5374B35725AF248300F413DD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5374B32D25AF248000F413DD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5374B33425AF248000F413DD;
-			remoteInfo = PrimeWords;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0ABA1832045CCE7B3FD5CC93 /* Pods_PrimeWords_PrimeWordsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimeWords_PrimeWordsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		392CB9C3C70059AEAFB4A183 /* Pods-PrimeWords-PrimeWordsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimeWords-PrimeWordsUITests.debug.xcconfig"; path = "Target Support Files/Pods-PrimeWords-PrimeWordsUITests/Pods-PrimeWords-PrimeWordsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5374B33525AF248000F413DD /* PrimeWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimeWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5374B33825AF248000F413DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5374B33A25AF248000F413DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,9 +43,14 @@
 		5374B34B25AF248300F413DD /* PrimeWordsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrimeWordsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5374B34F25AF248300F413DD /* PrimeWordsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeWordsTests.swift; sourceTree = "<group>"; };
 		5374B35125AF248300F413DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5374B35625AF248300F413DD /* PrimeWordsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrimeWordsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5374B35A25AF248300F413DD /* PrimeWordsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeWordsUITests.swift; sourceTree = "<group>"; };
-		5374B35C25AF248300F413DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5374B37425AF274B00F413DD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8A8ECE7BDB46358A0654B2C8 /* Pods-PrimeWords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimeWords.release.xcconfig"; path = "Target Support Files/Pods-PrimeWords/Pods-PrimeWords.release.xcconfig"; sourceTree = "<group>"; };
+		C5B7E32EDA714A4F99DBDF37 /* Pods_PrimeWords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimeWords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E80E3D0048B8A8A810E0741C /* Pods-PrimeWordsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimeWordsTests.release.xcconfig"; path = "Target Support Files/Pods-PrimeWordsTests/Pods-PrimeWordsTests.release.xcconfig"; sourceTree = "<group>"; };
+		E9700A058C4F56F0A3D3BB8E /* Pods-PrimeWordsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimeWordsTests.debug.xcconfig"; path = "Target Support Files/Pods-PrimeWordsTests/Pods-PrimeWordsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EC6B110AD59DE45B37C400E0 /* Pods_PrimeWordsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimeWordsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4299244D114D430F0F6B4C8 /* Pods-PrimeWords-PrimeWordsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimeWords-PrimeWordsUITests.release.xcconfig"; path = "Target Support Files/Pods-PrimeWords-PrimeWordsUITests/Pods-PrimeWords-PrimeWordsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FBF68A9A07EF76CF5A07CAD1 /* Pods-PrimeWords.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimeWords.debug.xcconfig"; path = "Target Support Files/Pods-PrimeWords/Pods-PrimeWords.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20E6A47E848835E9F3965C18 /* Pods_PrimeWords.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,26 +66,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5374B35325AF248300F413DD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				D1E4FB5059868D8823780563 /* Pods_PrimeWordsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3097C7600F98E16DC44E9F70 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FBF68A9A07EF76CF5A07CAD1 /* Pods-PrimeWords.debug.xcconfig */,
+				8A8ECE7BDB46358A0654B2C8 /* Pods-PrimeWords.release.xcconfig */,
+				392CB9C3C70059AEAFB4A183 /* Pods-PrimeWords-PrimeWordsUITests.debug.xcconfig */,
+				F4299244D114D430F0F6B4C8 /* Pods-PrimeWords-PrimeWordsUITests.release.xcconfig */,
+				E9700A058C4F56F0A3D3BB8E /* Pods-PrimeWordsTests.debug.xcconfig */,
+				E80E3D0048B8A8A810E0741C /* Pods-PrimeWordsTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		5374B32C25AF248000F413DD = {
 			isa = PBXGroup;
 			children = (
+				5374B37425AF274B00F413DD /* README.md */,
 				5374B33725AF248000F413DD /* PrimeWords */,
 				5374B34E25AF248300F413DD /* PrimeWordsTests */,
-				5374B35925AF248300F413DD /* PrimeWordsUITests */,
 				5374B33625AF248000F413DD /* Products */,
+				3097C7600F98E16DC44E9F70 /* Pods */,
+				FCDCBB6C8B3710AACE93E612 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,7 +103,6 @@
 			children = (
 				5374B33525AF248000F413DD /* PrimeWords.app */,
 				5374B34B25AF248300F413DD /* PrimeWordsTests.xctest */,
-				5374B35625AF248300F413DD /* PrimeWordsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,13 +130,14 @@
 			path = PrimeWordsTests;
 			sourceTree = "<group>";
 		};
-		5374B35925AF248300F413DD /* PrimeWordsUITests */ = {
+		FCDCBB6C8B3710AACE93E612 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5374B35A25AF248300F413DD /* PrimeWordsUITests.swift */,
-				5374B35C25AF248300F413DD /* Info.plist */,
+				C5B7E32EDA714A4F99DBDF37 /* Pods_PrimeWords.framework */,
+				0ABA1832045CCE7B3FD5CC93 /* Pods_PrimeWords_PrimeWordsUITests.framework */,
+				EC6B110AD59DE45B37C400E0 /* Pods_PrimeWordsTests.framework */,
 			);
-			path = PrimeWordsUITests;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,9 +147,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5374B35F25AF248300F413DD /* Build configuration list for PBXNativeTarget "PrimeWords" */;
 			buildPhases = (
+				52775FB98574D8A51C9D8ADA /* [CP] Check Pods Manifest.lock */,
 				5374B33125AF248000F413DD /* Sources */,
 				5374B33225AF248000F413DD /* Frameworks */,
+				5374B38425AF2EAE00F413DD /* SwiftLint */,
 				5374B33325AF248000F413DD /* Resources */,
+				319AA3EB5FAECAEC0CD66D6D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +167,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5374B36225AF248300F413DD /* Build configuration list for PBXNativeTarget "PrimeWordsTests" */;
 			buildPhases = (
+				9E7B9FBFFDAEC705C45042F6 /* [CP] Check Pods Manifest.lock */,
 				5374B34725AF248300F413DD /* Sources */,
 				5374B34825AF248300F413DD /* Frameworks */,
 				5374B34925AF248300F413DD /* Resources */,
@@ -166,24 +182,6 @@
 			productReference = 5374B34B25AF248300F413DD /* PrimeWordsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		5374B35525AF248300F413DD /* PrimeWordsUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5374B36525AF248300F413DD /* Build configuration list for PBXNativeTarget "PrimeWordsUITests" */;
-			buildPhases = (
-				5374B35225AF248300F413DD /* Sources */,
-				5374B35325AF248300F413DD /* Frameworks */,
-				5374B35425AF248300F413DD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5374B35825AF248300F413DD /* PBXTargetDependency */,
-			);
-			name = PrimeWordsUITests;
-			productName = PrimeWordsUITests;
-			productReference = 5374B35625AF248300F413DD /* PrimeWordsUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,10 +195,6 @@
 						CreatedOnToolsVersion = 12.3;
 					};
 					5374B34A25AF248300F413DD = {
-						CreatedOnToolsVersion = 12.3;
-						TestTargetID = 5374B33425AF248000F413DD;
-					};
-					5374B35525AF248300F413DD = {
 						CreatedOnToolsVersion = 12.3;
 						TestTargetID = 5374B33425AF248000F413DD;
 					};
@@ -221,7 +215,6 @@
 			targets = (
 				5374B33425AF248000F413DD /* PrimeWords */,
 				5374B34A25AF248300F413DD /* PrimeWordsTests */,
-				5374B35525AF248300F413DD /* PrimeWordsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -233,6 +226,7 @@
 			files = (
 				5374B34525AF248300F413DD /* LaunchScreen.storyboard in Resources */,
 				5374B34225AF248300F413DD /* Assets.xcassets in Resources */,
+				5374B37525AF274B00F413DD /* README.md in Resources */,
 				5374B34025AF248000F413DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,14 +238,89 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5374B35425AF248300F413DD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		319AA3EB5FAECAEC0CD66D6D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PrimeWords/Pods-PrimeWords-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PrimeWords/Pods-PrimeWords-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
 			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PrimeWords/Pods-PrimeWords-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
-/* End PBXResourcesBuildPhase section */
+		52775FB98574D8A51C9D8ADA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PrimeWords-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5374B38425AF2EAE00F413DD /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		9E7B9FBFFDAEC705C45042F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PrimeWordsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5374B33125AF248000F413DD /* Sources */ = {
@@ -272,14 +341,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5374B35225AF248300F413DD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5374B35B25AF248300F413DD /* PrimeWordsUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -287,11 +348,6 @@
 			isa = PBXTargetDependency;
 			target = 5374B33425AF248000F413DD /* PrimeWords */;
 			targetProxy = 5374B34C25AF248300F413DD /* PBXContainerItemProxy */;
-		};
-		5374B35825AF248300F413DD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5374B33425AF248000F413DD /* PrimeWords */;
-			targetProxy = 5374B35725AF248300F413DD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -366,7 +422,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -421,7 +477,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -433,6 +489,7 @@
 		};
 		5374B36025AF248300F413DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBF68A9A07EF76CF5A07CAD1 /* Pods-PrimeWords.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -452,6 +509,7 @@
 		};
 		5374B36125AF248300F413DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A8ECE7BDB46358A0654B2C8 /* Pods-PrimeWords.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -471,6 +529,7 @@
 		};
 		5374B36325AF248300F413DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9700A058C4F56F0A3D3BB8E /* Pods-PrimeWordsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -493,6 +552,7 @@
 		};
 		5374B36425AF248300F413DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E80E3D0048B8A8A810E0741C /* Pods-PrimeWordsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -510,46 +570,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PrimeWords.app/PrimeWords";
-			};
-			name = Release;
-		};
-		5374B36625AF248300F413DD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q8D8L92B5Y;
-				INFOPLIST_FILE = PrimeWordsUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.aarontunney.PrimeWordsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = PrimeWords;
-			};
-			name = Debug;
-		};
-		5374B36725AF248300F413DD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q8D8L92B5Y;
-				INFOPLIST_FILE = PrimeWordsUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.aarontunney.PrimeWordsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = PrimeWords;
 			};
 			name = Release;
 		};
@@ -579,15 +599,6 @@
 			buildConfigurations = (
 				5374B36325AF248300F413DD /* Debug */,
 				5374B36425AF248300F413DD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5374B36525AF248300F413DD /* Build configuration list for PBXNativeTarget "PrimeWordsUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5374B36625AF248300F413DD /* Debug */,
-				5374B36725AF248300F413DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

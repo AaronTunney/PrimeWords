@@ -1,0 +1,72 @@
+# Prime Words
+
+Written by Aaron Tunney
+
+## Task:
+
+The test is as follows:
+
+Given a book in a text file ([The Railway Children](http://www.loyalbooks.com/download/text/Railway-Children-by-E-Nesbit.txt) for example)
+
+1. Write an application that outputs the individual words that appear in the book, and how many times that word appears in the text file.
+1. The second part is also output whether the number of times each word appears is a prime number.
+
+The following assumptions can be made:
+ - Ignore punctuation and capitalisation
+
+### It would be beneficial to consider/use
+
+The tech stack we use is:
+- MVVM-C clean architecture
+- Swift 5.x
+- RxSwift & RxCocoa
+- Realm
+- Views in code, we don’t use Storyboards or Nibs
+- XCTest and XCUI for testing
+- Scalability and performance
+
+If time permits, use local DB as a cache (optional)
+
+Comments and rationale for the chosen solution
+
+## Solution
+
+The ideal solution to this task would be a [share extension](https://developer.apple.com/design/human-interface-guidelines/ios/extensions/sharing-and-actions/) that can be accessed directly through Safari. Given the time contraints, this project instead only performs the task on text files bundled with the app.
+
+The architecture of the solution is as follows:
+
+- MVVM-C clean architecture
+- Swift 5.3
+- Combine (i.e. Apple's native equivalent of RxSwift)
+- Realm
+- No storyboards or nibs
+- XCTests unit tests only for now
+- SFSymbols
+- Support for dark mode, accessibility and localization
+
+
+## What's missing due to time constraints
+
+- Network-based text file selection
+- iCloud drive support
+- RxSwift/RxCocoa (_I'm still learning!_)
+- XCUI tests
+- Support for < iOS 13
+
+## Roadmap
+
+### General
+
+[x] Basic app structure
+
+### Interface
+
+[ ] List of files view
+[ ] Progress view
+[ ] Results view
+[ ] Display primes
+
+### Engine
+
+[ ] Analyse chunk
+[ ] Read whole book
