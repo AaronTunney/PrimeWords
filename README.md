@@ -2,6 +2,8 @@
 
 Written by Aaron Tunney
 
+[![Build status](https://build.appcenter.ms/v0.1/apps/88ca5698-ecfd-4c69-9436-e24b043ed4a7/branches/main/badge)](https://appcenter.ms)
+
 ## Task:
 
 The test is as follows:
