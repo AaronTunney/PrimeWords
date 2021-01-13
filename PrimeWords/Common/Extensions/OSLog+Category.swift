@@ -15,8 +15,9 @@ extension OSLog {
 
     static let general = OSLog(subsystem: subsystem, category: "general")
     static let home = OSLog(subsystem: subsystem, category: "home")
-    static let fileList = OSLog(subsystem: subsystem, category: "file list")
+    static let bookList = OSLog(subsystem: subsystem, category: "book list")
     static let results = OSLog(subsystem: subsystem, category: "results")
+    static let booksService = OSLog(subsystem: subsystem, category: "books service")
     static let bookAnalyzer = OSLog(subsystem: subsystem, category: "book analyzer")
     static let test = OSLog(subsystem: subsystem, category: "test")
 }

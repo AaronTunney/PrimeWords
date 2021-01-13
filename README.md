@@ -46,11 +46,16 @@ The architecture of the solution is as follows:
 - SFSymbols
 - Support for dark mode, accessibility and localization
 
+## Assumptions
+
+- All words, including the table of contents are to be read.
 
 ## What's missing due to time constraints
 
+- Surfacing errors to the user
 - Network-based text file selection
 - iCloud drive support
+- Separating the Book Analyzer into its own framework/Swift package
 - RxSwift/RxCocoa (_I'm still learning!_)
 - XCUI tests
 - Support for < iOS 13
@@ -63,7 +68,7 @@ The architecture of the solution is as follows:
 
 ### Interface
 
-- [ ] List of files view
+- [x] List of files view
 - [ ] Progress view
 - [ ] Results view
 - [ ] Display primes

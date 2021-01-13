@@ -13,12 +13,12 @@ class HomeRouter {
     static func createModule() -> UIViewController? {
         let view = HomeViewController()
 
-        let mainVC = UIViewController()
-        mainVC.view.backgroundColor = .yellow
-        let detailVC = UIViewController()
-        detailVC.view.backgroundColor = .red
+        guard let mainViewController = BookListRouter.createModule() else { return nil }
+        let mainNavigationController = UINavigationController(rootViewController: mainViewController)
+        let detailViewController = UIViewController()
+        detailViewController.view.backgroundColor = .red
 
-        view.viewControllers = [mainVC, detailVC]
+        view.viewControllers = [mainNavigationController, detailViewController]
 
         let viewModel = DefaultHomeViewModel()
         viewModel.view = view
