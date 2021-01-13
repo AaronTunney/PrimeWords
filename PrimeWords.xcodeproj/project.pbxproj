@@ -10,13 +10,17 @@
 		20E6A47E848835E9F3965C18 /* Pods_PrimeWords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B7E32EDA714A4F99DBDF37 /* Pods_PrimeWords.framework */; };
 		5374B33925AF248000F413DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B33825AF248000F413DD /* AppDelegate.swift */; };
 		5374B33B25AF248000F413DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B33A25AF248000F413DD /* SceneDelegate.swift */; };
-		5374B33D25AF248000F413DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B33C25AF248000F413DD /* ViewController.swift */; };
-		5374B34025AF248000F413DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5374B33E25AF248000F413DD /* Main.storyboard */; };
 		5374B34225AF248300F413DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5374B34125AF248300F413DD /* Assets.xcassets */; };
 		5374B34525AF248300F413DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5374B34325AF248300F413DD /* LaunchScreen.storyboard */; };
 		5374B35025AF248300F413DD /* PrimeWordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B34F25AF248300F413DD /* PrimeWordsTests.swift */; };
 		5374B37525AF274B00F413DD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5374B37425AF274B00F413DD /* README.md */; };
 		5374B39225AF33BB00F413DD /* OSLog+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B39125AF33BB00F413DD /* OSLog+Category.swift */; };
+		5374B39D25AF64B700F413DD /* HomeWireframeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B39C25AF64B700F413DD /* HomeWireframeProtocol.swift */; };
+		5374B3A125AF64C900F413DD /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B3A025AF64C900F413DD /* HomeRouter.swift */; };
+		5374B3A525AF64DA00F413DD /* HomeViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B3A425AF64DA00F413DD /* HomeViewModelProtocol.swift */; };
+		5374B3A925AF64E900F413DD /* DefaultHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B3A825AF64E900F413DD /* DefaultHomeViewModel.swift */; };
+		5374B3AD25AF650700F413DD /* HomeViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B3AC25AF650700F413DD /* HomeViewProtocol.swift */; };
+		5374B3B125AF651600F413DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B3B025AF651600F413DD /* HomeViewController.swift */; };
 		D1E4FB5059868D8823780563 /* Pods_PrimeWordsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6B110AD59DE45B37C400E0 /* Pods_PrimeWordsTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,8 +40,6 @@
 		5374B33525AF248000F413DD /* PrimeWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimeWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5374B33825AF248000F413DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5374B33A25AF248000F413DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5374B33C25AF248000F413DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5374B33F25AF248000F413DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5374B34125AF248300F413DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5374B34425AF248300F413DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5374B34625AF248300F413DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,6 +48,12 @@
 		5374B35125AF248300F413DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5374B37425AF274B00F413DD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5374B39125AF33BB00F413DD /* OSLog+Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSLog+Category.swift"; sourceTree = "<group>"; };
+		5374B39C25AF64B700F413DD /* HomeWireframeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWireframeProtocol.swift; sourceTree = "<group>"; };
+		5374B3A025AF64C900F413DD /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		5374B3A425AF64DA00F413DD /* HomeViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelProtocol.swift; sourceTree = "<group>"; };
+		5374B3A825AF64E900F413DD /* DefaultHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHomeViewModel.swift; sourceTree = "<group>"; };
+		5374B3AC25AF650700F413DD /* HomeViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewProtocol.swift; sourceTree = "<group>"; };
+		5374B3B025AF651600F413DD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8A8ECE7BDB46358A0654B2C8 /* Pods-PrimeWords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimeWords.release.xcconfig"; path = "Target Support Files/Pods-PrimeWords/Pods-PrimeWords.release.xcconfig"; sourceTree = "<group>"; };
 		C5B7E32EDA714A4F99DBDF37 /* Pods_PrimeWords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimeWords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E80E3D0048B8A8A810E0741C /* Pods-PrimeWordsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimeWordsTests.release.xcconfig"; path = "Target Support Files/Pods-PrimeWordsTests/Pods-PrimeWordsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -157,7 +165,6 @@
 		5374B38B25AF331C00F413DD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5374B33E25AF248000F413DD /* Main.storyboard */,
 				5374B34125AF248300F413DD /* Assets.xcassets */,
 				5374B34325AF248300F413DD /* LaunchScreen.storyboard */,
 				5374B34625AF248300F413DD /* Info.plist */,
@@ -178,6 +185,8 @@
 		5374B38D25AF336400F413DD /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				5374B39C25AF64B700F413DD /* HomeWireframeProtocol.swift */,
+				5374B3A025AF64C900F413DD /* HomeRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -185,6 +194,8 @@
 		5374B38E25AF336A00F413DD /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				5374B3A425AF64DA00F413DD /* HomeViewModelProtocol.swift */,
+				5374B3A825AF64E900F413DD /* DefaultHomeViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -192,7 +203,8 @@
 		5374B38F25AF337100F413DD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5374B33C25AF248000F413DD /* ViewController.swift */,
+				5374B3AC25AF650700F413DD /* HomeViewProtocol.swift */,
+				5374B3B025AF651600F413DD /* HomeViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -302,7 +314,6 @@
 				5374B34525AF248300F413DD /* LaunchScreen.storyboard in Resources */,
 				5374B34225AF248300F413DD /* Assets.xcassets in Resources */,
 				5374B37525AF274B00F413DD /* README.md in Resources */,
-				5374B34025AF248000F413DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,9 +414,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5374B39225AF33BB00F413DD /* OSLog+Category.swift in Sources */,
-				5374B33D25AF248000F413DD /* ViewController.swift in Sources */,
+				5374B3A125AF64C900F413DD /* HomeRouter.swift in Sources */,
+				5374B39D25AF64B700F413DD /* HomeWireframeProtocol.swift in Sources */,
+				5374B3A525AF64DA00F413DD /* HomeViewModelProtocol.swift in Sources */,
+				5374B3B125AF651600F413DD /* HomeViewController.swift in Sources */,
 				5374B33925AF248000F413DD /* AppDelegate.swift in Sources */,
 				5374B33B25AF248000F413DD /* SceneDelegate.swift in Sources */,
+				5374B3AD25AF650700F413DD /* HomeViewProtocol.swift in Sources */,
+				5374B3A925AF64E900F413DD /* DefaultHomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,14 +444,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5374B33E25AF248000F413DD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5374B33F25AF248000F413DD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5374B34325AF248300F413DD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
