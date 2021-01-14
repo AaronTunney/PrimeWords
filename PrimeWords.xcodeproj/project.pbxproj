@@ -50,6 +50,17 @@
 		5374B45825B0A8FD00F413DD /* BookStreamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B45725B0A8FD00F413DD /* BookStreamer.swift */; };
 		5374B45C25B0A94700F413DD /* Publisher+BookAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B45B25B0A94700F413DD /* Publisher+BookAnalysis.swift */; };
 		5374B46825B0AB5B00F413DD /* URL+BookID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B46725B0AB5B00F413DD /* URL+BookID.swift */; };
+		5374B47725B0DBF300F413DD /* BookDetailsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B47625B0DBF300F413DD /* BookDetailsViewProtocol.swift */; };
+		5374B47B25B0DC0200F413DD /* BookDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B47A25B0DC0200F413DD /* BookDetailsViewController.swift */; };
+		5374B47F25B0DC1500F413DD /* BookDetailsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B47E25B0DC1500F413DD /* BookDetailsViewModelProtocol.swift */; };
+		5374B48325B0DC2500F413DD /* DefaultBookDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B48225B0DC2500F413DD /* DefaultBookDetailsViewModel.swift */; };
+		5374B48725B0DC3500F413DD /* BookDetailsWireframeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B48625B0DC3500F413DD /* BookDetailsWireframeProtocol.swift */; };
+		5374B48B25B0DC4600F413DD /* BookDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B48A25B0DC4600F413DD /* BookDetailsRouter.swift */; };
+		5374B49D25B0E80A00F413DD /* WordSummaryViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B49C25B0E80A00F413DD /* WordSummaryViewModelProtocol.swift */; };
+		5374B4A125B0E81A00F413DD /* DefaultWordSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B4A025B0E81A00F413DD /* DefaultWordSummaryViewModel.swift */; };
+		5374B4A725B0E9EF00F413DD /* WordSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B4A625B0E9EF00F413DD /* WordSummaryTableViewCell.swift */; };
+		5374B4B325B0F81500F413DD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5374B4B525B0F81500F413DD /* Localizable.strings */; };
+		5374B4B925B0FC3300F413DD /* completeBook.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5374B4B825B0FC3300F413DD /* completeBook.txt */; };
 		D1E4FB5059868D8823780563 /* Pods_PrimeWordsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6B110AD59DE45B37C400E0 /* Pods_PrimeWordsTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +123,17 @@
 		5374B45725B0A8FD00F413DD /* BookStreamer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStreamer.swift; sourceTree = "<group>"; };
 		5374B45B25B0A94700F413DD /* Publisher+BookAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+BookAnalysis.swift"; sourceTree = "<group>"; };
 		5374B46725B0AB5B00F413DD /* URL+BookID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+BookID.swift"; sourceTree = "<group>"; };
+		5374B47625B0DBF300F413DD /* BookDetailsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsViewProtocol.swift; sourceTree = "<group>"; };
+		5374B47A25B0DC0200F413DD /* BookDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsViewController.swift; sourceTree = "<group>"; };
+		5374B47E25B0DC1500F413DD /* BookDetailsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsViewModelProtocol.swift; sourceTree = "<group>"; };
+		5374B48225B0DC2500F413DD /* DefaultBookDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBookDetailsViewModel.swift; sourceTree = "<group>"; };
+		5374B48625B0DC3500F413DD /* BookDetailsWireframeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsWireframeProtocol.swift; sourceTree = "<group>"; };
+		5374B48A25B0DC4600F413DD /* BookDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsRouter.swift; sourceTree = "<group>"; };
+		5374B49C25B0E80A00F413DD /* WordSummaryViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSummaryViewModelProtocol.swift; sourceTree = "<group>"; };
+		5374B4A025B0E81A00F413DD /* DefaultWordSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultWordSummaryViewModel.swift; sourceTree = "<group>"; };
+		5374B4A625B0E9EF00F413DD /* WordSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSummaryTableViewCell.swift; sourceTree = "<group>"; };
+		5374B4B425B0F81500F413DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5374B4B825B0FC3300F413DD /* completeBook.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = completeBook.txt; sourceTree = "<group>"; };
 		8A8ECE7BDB46358A0654B2C8 /* Pods-PrimeWords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimeWords.release.xcconfig"; path = "Target Support Files/Pods-PrimeWords/Pods-PrimeWords.release.xcconfig"; sourceTree = "<group>"; };
 		C5B7E32EDA714A4F99DBDF37 /* Pods_PrimeWords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimeWords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E80E3D0048B8A8A810E0741C /* Pods-PrimeWordsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimeWordsTests.release.xcconfig"; path = "Target Support Files/Pods-PrimeWordsTests/Pods-PrimeWordsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -235,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				5374B3C125AF8ED300F413DD /* Books */,
+				5374B4AC25B0F7E900F413DD /* Localization */,
 				5374B34125AF248300F413DD /* Assets.xcassets */,
 				5374B34325AF248300F413DD /* LaunchScreen.storyboard */,
 				5374B34625AF248300F413DD /* Info.plist */,
@@ -304,8 +327,8 @@
 			isa = PBXGroup;
 			children = (
 				5374B3CE25AF934300F413DD /* Book.swift */,
-				5374B42F25B08EEA00F413DD /* PrimeWordsError.swift */,
 				5374B43525B0970C00F413DD /* Word.swift */,
+				5374B42F25B08EEA00F413DD /* PrimeWordsError.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -363,6 +386,8 @@
 		5374B41025AFB6DC00F413DD /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				5374B48625B0DC3500F413DD /* BookDetailsWireframeProtocol.swift */,
+				5374B48A25B0DC4600F413DD /* BookDetailsRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -370,6 +395,10 @@
 		5374B41125AFB6E400F413DD /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				5374B47E25B0DC1500F413DD /* BookDetailsViewModelProtocol.swift */,
+				5374B48225B0DC2500F413DD /* DefaultBookDetailsViewModel.swift */,
+				5374B49C25B0E80A00F413DD /* WordSummaryViewModelProtocol.swift */,
+				5374B4A025B0E81A00F413DD /* DefaultWordSummaryViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -377,6 +406,9 @@
 		5374B41225AFB92C00F413DD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5374B47625B0DBF300F413DD /* BookDetailsViewProtocol.swift */,
+				5374B47A25B0DC0200F413DD /* BookDetailsViewController.swift */,
+				5374B4A625B0E9EF00F413DD /* WordSummaryTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -388,6 +420,7 @@
 				5374B44225B0A1E800F413DD /* singleLineBook.txt */,
 				5374B44825B0A1FF00F413DD /* multiLineBook.txt */,
 				5374B44C25B0A25100F413DD /* punctuatedBook.txt */,
+				5374B4B825B0FC3300F413DD /* completeBook.txt */,
 			);
 			path = "Mock Data";
 			sourceTree = "<group>";
@@ -398,6 +431,14 @@
 				5374B45725B0A8FD00F413DD /* BookStreamer.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		5374B4AC25B0F7E900F413DD /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				5374B4B525B0F81500F413DD /* Localizable.strings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		FCDCBB6C8B3710AACE93E612 /* Frameworks */ = {
@@ -497,6 +538,7 @@
 				5374B3D725AF9A3700F413DD /* Moby-Dick-by-Herman-Melville.txt in Resources */,
 				5374B34525AF248300F413DD /* LaunchScreen.storyboard in Resources */,
 				5374B3D925AF9A3700F413DD /* Railway-Children-by-E-Nesbit.txt in Resources */,
+				5374B4B325B0F81500F413DD /* Localizable.strings in Resources */,
 				5374B3D825AF9A3700F413DD /* Aesops-Fables.txt in Resources */,
 				5374B34225AF248300F413DD /* Assets.xcassets in Resources */,
 				5374B37525AF274B00F413DD /* README.md in Resources */,
@@ -507,6 +549,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5374B4B925B0FC3300F413DD /* completeBook.txt in Resources */,
 				5374B44325B0A1E800F413DD /* singleLineBook.txt in Resources */,
 				5374B44925B0A1FF00F413DD /* multiLineBook.txt in Resources */,
 				5374B45125B0A3F200F413DD /* emptyBook.txt in Resources */,
@@ -603,16 +646,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5374B4A125B0E81A00F413DD /* DefaultWordSummaryViewModel.swift in Sources */,
 				5374B45C25B0A94700F413DD /* Publisher+BookAnalysis.swift in Sources */,
+				5374B48725B0DC3500F413DD /* BookDetailsWireframeProtocol.swift in Sources */,
 				5374B39225AF33BB00F413DD /* OSLog+Category.swift in Sources */,
 				5374B3EF25AF9C3400F413DD /* DefaultBookListViewModel.swift in Sources */,
 				5374B3A125AF64C900F413DD /* HomeRouter.swift in Sources */,
 				5374B3F325AF9C4300F413DD /* BookListViewProtocol.swift in Sources */,
 				5374B39D25AF64B700F413DD /* HomeWireframeProtocol.swift in Sources */,
 				5374B3A525AF64DA00F413DD /* HomeViewModelProtocol.swift in Sources */,
+				5374B47725B0DBF300F413DD /* BookDetailsViewProtocol.swift in Sources */,
+				5374B49D25B0E80A00F413DD /* WordSummaryViewModelProtocol.swift in Sources */,
 				5374B3C325AF90B300F413DD /* BooksServiceProtocol.swift in Sources */,
 				5374B3FC25AFA14200F413DD /* MVVMCommon.swift in Sources */,
+				5374B47B25B0DC0200F413DD /* BookDetailsViewController.swift in Sources */,
 				5374B3E725AF9BED00F413DD /* BookListRouter.swift in Sources */,
+				5374B47F25B0DC1500F413DD /* BookDetailsViewModelProtocol.swift in Sources */,
 				5374B40A25AFA9BA00F413DD /* BookSummaryTableViewCell.swift in Sources */,
 				5374B41425B0595400F413DD /* BookAnalyzerServiceProtocol.swift in Sources */,
 				5374B45825B0A8FD00F413DD /* BookStreamer.swift in Sources */,
@@ -623,11 +672,14 @@
 				5374B40225AFA29200F413DD /* BookSummaryViewModelProtocol.swift in Sources */,
 				5374B40625AFA2F900F413DD /* DefaultBookSummaryViewModel.swift in Sources */,
 				5374B3F725AF9C4F00F413DD /* BookListViewController.swift in Sources */,
+				5374B48B25B0DC4600F413DD /* BookDetailsRouter.swift in Sources */,
 				5374B3CF25AF934300F413DD /* Book.swift in Sources */,
 				5374B3E125AF9BD900F413DD /* BookListWireframeProtocol.swift in Sources */,
 				5374B3AD25AF650700F413DD /* HomeViewProtocol.swift in Sources */,
 				5374B41825B0597600F413DD /* DefaultBookAnalyzerService.swift in Sources */,
 				5374B3A925AF64E900F413DD /* DefaultHomeViewModel.swift in Sources */,
+				5374B4A725B0E9EF00F413DD /* WordSummaryTableViewCell.swift in Sources */,
+				5374B48325B0DC2500F413DD /* DefaultBookDetailsViewModel.swift in Sources */,
 				5374B46825B0AB5B00F413DD /* URL+BookID.swift in Sources */,
 				5374B43025B08EEA00F413DD /* PrimeWordsError.swift in Sources */,
 				5374B42325B0665700F413DD /* Int+Prime.swift in Sources */,
@@ -662,6 +714,14 @@
 				5374B34425AF248300F413DD /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5374B4B525B0F81500F413DD /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5374B4B425B0F81500F413DD /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

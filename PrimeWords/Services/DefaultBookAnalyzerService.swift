@@ -14,17 +14,36 @@ import RealmSwift
 // A preferable solution would be to read the book in larger chunks and parallelize
 // the analysis work using an operation queue to improve performance.
 class DefaultBookAnalyzerService {
-    var publisher: AnyPublisher<Int, Error>?
-    let realmConfiguration: Realm.Configuration
-    let bookURL: URL
-
-    init(url: URL,
-         realmConfiguration: Realm.Configuration = .defaultConfiguration) {
-        self.bookURL = url
-        self.realmConfiguration = realmConfiguration
+    private struct K {
+        static let defaultChunkSize = 500
     }
 
-    func book() throws -> Book {
+    var book: Book? {
+        do {
+            let realm = try Realm(configuration: realmConfiguration)
+            return realm.object(ofType: Book.self, forPrimaryKey: bookURL.bookID)
+        } catch {
+            os_log(error: error, log: .bookAnalyzer)
+            return nil
+        }
+    }
+
+    private let realmConfiguration: Realm.Configuration
+    private let dispatchQueue: DispatchQueue
+    private let bookURL: URL
+    private let chunkSize: Int
+
+    init(url: URL,
+         chunkSize: Int = K.defaultChunkSize,
+         realmConfiguration: Realm.Configuration = .defaultConfiguration,
+         dispatchQueue: DispatchQueue = .global(qos: .utility)) {
+        self.bookURL = url
+        self.chunkSize = chunkSize
+        self.realmConfiguration = realmConfiguration
+        self.dispatchQueue = dispatchQueue
+    }
+
+    private func createBook() throws -> Book {
         let realm = try Realm(configuration: realmConfiguration)
 
         if let book = realm.object(ofType: Book.self, forPrimaryKey: bookURL.bookID) {
@@ -51,7 +70,7 @@ extension DefaultBookAnalyzerService: BookAnalyzerServiceProtocol {
 
         // Retrieve or create Book object
         do {
-            let bookToAnalyze = try book()
+            let bookToAnalyze = try createBook()
             let realm = try Realm(configuration: realmConfiguration)
             try realm.write {
                 bookToAnalyze.reset()
@@ -64,11 +83,13 @@ extension DefaultBookAnalyzerService: BookAnalyzerServiceProtocol {
 
         return bookStream.readPublisher()
             .analyzeLine()
+            .collect(chunkSize)
             .addToRealm(bookID: bookURL.bookID, realmConfiguration: realmConfiguration)
             .map { _ in
-                linesRead += 1
+                linesRead += self.chunkSize
                 return linesRead
             }
+            .throttle(for: 1.0, scheduler: dispatchQueue, latest: true)
             .setFailureType(to: Error.self)
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()

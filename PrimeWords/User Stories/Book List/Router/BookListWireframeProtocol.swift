@@ -5,6 +5,8 @@
 //  Created by Aaron Tunney on 13/01/2021.
 //
 
-import Foundation
+import UIKit
 
-protocol BookListWireframeProtocol {}
+protocol BookListWireframeProtocol {
+    func showBookDetailViewController(bookAnalyzer: BookAnalyzerServiceProtocol)
+}

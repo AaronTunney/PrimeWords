@@ -55,4 +55,11 @@ extension DefaultBookListViewModel: BookListViewModelProtocol {
             }
             .store(in: &disposables)
     }
+
+    func bookSelected(at row: Int, router: BookListWireframeProtocol) {
+        let bookURL = bookURLs[row]
+        let bookAnalyzer = DefaultBookAnalyzerService(url: bookURL)
+
+        router.showBookDetailViewController(bookAnalyzer: bookAnalyzer)
+    }
 }

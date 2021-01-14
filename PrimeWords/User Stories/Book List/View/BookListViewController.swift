@@ -29,6 +29,7 @@ class BookListViewController: UIViewController {
             switch result {
             case .success(let viewModel):
                 if let bookListViewModel = viewModel as? BookListViewModelProtocol {
+                    self?.viewModel = bookListViewModel
                     self?.configure(viewModel: bookListViewModel)
                 }
                 self?.tableView?.reloadData()
@@ -69,7 +70,7 @@ class BookListViewController: UIViewController {
 
 extension BookListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.booksCount
+        viewModel.booksCount
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -85,7 +86,17 @@ extension BookListViewController: UITableViewDataSource {
 
 // MARK: - Table View delegate
 
-extension BookListViewController: UITableViewDelegate {}
+extension BookListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        defer {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+
+        guard let router = router else { return }
+
+        viewModel.bookSelected(at: indexPath.row, router: router)
+    }
+}
 
 // MARK: - Book List view protocol
 

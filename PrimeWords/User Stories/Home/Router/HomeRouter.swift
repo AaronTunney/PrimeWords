@@ -13,10 +13,9 @@ class HomeRouter {
     static func createModule() -> UIViewController? {
         let view = HomeViewController()
 
-        guard let mainViewController = BookListRouter.createModule() else { return nil }
+        let mainViewController = BookListRouter.createModule()
         let mainNavigationController = UINavigationController(rootViewController: mainViewController)
         let detailViewController = UIViewController()
-        detailViewController.view.backgroundColor = .red
 
         view.viewControllers = [mainNavigationController, detailViewController]
 

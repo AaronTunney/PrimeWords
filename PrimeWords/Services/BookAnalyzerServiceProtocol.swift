@@ -9,5 +9,7 @@ import Foundation
 import Combine
 
 protocol BookAnalyzerServiceProtocol {
+    var book: Book? { get }
+
     func analyze() -> AnyPublisher<Int, Error>
 }

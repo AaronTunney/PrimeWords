@@ -13,6 +13,7 @@ import Combine
 class BookAnalyzerServiceTests: XCTestCase {
     private struct K {
         static let defaultTimeout: TimeInterval = 15
+        static let largeTimeout: TimeInterval = 720
     }
 
     private enum File: String {
@@ -20,6 +21,7 @@ class BookAnalyzerServiceTests: XCTestCase {
         case singleLineBook
         case multiLineBook
         case punctuatedBook
+        case completeBook
     }
 
     private var disposables = Set<AnyCancellable>()
@@ -40,6 +42,35 @@ class BookAnalyzerServiceTests: XCTestCase {
 
     func testPunctuatedBook() throws {
         try runBookTest(file: .punctuatedBook)
+    }
+
+    func testAnalyzerPerformance() throws {
+        let fileURL = try XCTUnwrap(url(for: .completeBook))
+
+        let realmConfiguration = generateRealmConfiguration()
+        let bookAnalyzer = DefaultBookAnalyzerService(url: fileURL, realmConfiguration: realmConfiguration)
+
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.iterationCount = 1
+
+        self.measure(options: measureOptions) {
+            let bookExpectation = expectation(description: #function)
+
+            bookAnalyzer.analyze()
+                .sink { complete in
+                    switch complete {
+                    case .failure(let error):
+                        XCTFail(error.localizedDescription)
+                    case .finished:
+                        bookExpectation.fulfill()
+                    }
+                } receiveValue: { value in
+                    print("Lines read: \(value)")
+                }
+                .store(in: &disposables)
+
+            wait(for: [bookExpectation], timeout: K.largeTimeout)
+        }
     }
 
     // MARK: - Test helpers
@@ -72,7 +103,6 @@ class BookAnalyzerServiceTests: XCTestCase {
 
         evaluteBook(book)
     }
-
 
     // MARK: - Utility helpers
 

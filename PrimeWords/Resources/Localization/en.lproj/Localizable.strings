@@ -1,0 +1,18 @@
+/*
+ To generate this file automatically, run:
+ find ./ -name "*.swift" -print0 | xargs -0 xcrun extractLocStrings -o Resources/Localisation/en.lproj
+ */
+
+// MARK: - Common
+// MARK: Errors
+
+/* Invalid file path */
+"PrimeWords.Common.Error.invalidFilePath" = "Invalid file path";
+
+// MARK: - Book Details
+
+/* Analysis Complete! */
+"PrimeWords.BookDetails.Progress.Complete" = "Analysis Complete!";
+
+/* X lines processed */
+"PrimeWords.BookDetails.Progress.Title" = "%td lines processed";

@@ -8,9 +8,9 @@
 import UIKit
 
 class BookListRouter {
-    weak var view: BookListViewProtocol?
+    weak var view: (UIViewController & BookListViewProtocol)?
 
-    static func createModule(booksService: BooksServiceProtocol = LocalBooksService()) -> UIViewController? {
+    static func createModule(booksService: BooksServiceProtocol = LocalBooksService()) -> UIViewController {
         let view = BookListViewController()
 
         let viewModel = DefaultBookListViewModel(booksService: booksService)
@@ -25,4 +25,9 @@ class BookListRouter {
     }
 }
 
-extension BookListRouter: BookListWireframeProtocol {}
+extension BookListRouter: BookListWireframeProtocol {
+    func showBookDetailViewController(bookAnalyzer: BookAnalyzerServiceProtocol) {
+        let bookDetailViewController = BookDetailsRouter.createModule(bookAnalyzer: bookAnalyzer)
+        view?.splitViewController?.showDetailViewController(bookDetailViewController, sender: view)
+    }
+}

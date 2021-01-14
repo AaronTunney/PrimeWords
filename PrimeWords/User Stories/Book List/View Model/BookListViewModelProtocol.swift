@@ -13,5 +13,10 @@ protocol BookListViewModelProtocol: ViewModelProtocol {
     var booksCount: Int { get }
 
     func bookSummary(at index: Int) -> BookSummaryViewModelProtocol
+
+    // Data services
     func getBooks()
+
+    // Navigation
+    func bookSelected(at row: Int, router: BookListWireframeProtocol)
 }
