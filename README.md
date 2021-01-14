@@ -56,6 +56,7 @@ The architecture of the solution is as follows:
 - Network-based text file selection
 - iCloud drive support
 - Separating the Book Analyzer into its own framework/Swift package
+- Realm migration support
 - RxSwift/RxCocoa (_I'm still learning!_)
 - XCUI tests
 - Support for < iOS 13

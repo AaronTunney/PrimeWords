@@ -2,7 +2,7 @@
 //  LocalBooksService.swift
 //  PrimeWords
 //
-//  Created by Tunney, Aaron (ELS) on 13/01/2021.
+//  Created by Aaron Tunney on 13/01/2021.
 //
 
 import Foundation
