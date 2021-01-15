@@ -62,6 +62,7 @@ The architecture of the solution is as follows:
 - Realm migration support
 - RxSwift/RxCocoa (_I'm still learning!_)
 - XCUI tests
+- MVVM module unit tests
 - Support for < iOS 13
 
 ## Known issues

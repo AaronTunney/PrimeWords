@@ -10,7 +10,7 @@ import Combine
 
 protocol BooksServiceProtocol {
     // Using a publisher here is overkill for retrieving a local list of
-    // books but this protocol could also be implemented by a network-based
-    // implementation.
+    // books. However, this protocol could also be implemented by a network-based
+    // service.
     func getBookURLs() -> AnyPublisher<[URL], Error>
 }

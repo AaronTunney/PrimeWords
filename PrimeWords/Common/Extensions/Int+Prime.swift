@@ -10,8 +10,8 @@ import Foundation
 extension Int {
     // Taken from: https://stackoverflow.com/questions/31105664/check-if-a-number-is-prime
     //
-    // The top five answers were benchmarked and the one that (a) passed all of the unit tests and
-    // (b) performed the best was chosen.
+    // The top five answers from the above were benchmarked and the one that (a) passed all of
+    // the unit tests and (b) performed the best was chosen.
     //
     // Ultimately a hard-coded list of primes would be the fastest solution here but that feels like
     // cheating!

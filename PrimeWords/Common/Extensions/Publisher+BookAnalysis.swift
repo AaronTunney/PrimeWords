@@ -10,6 +10,7 @@ import Combine
 import RealmSwift
 
 extension Publisher where Output == String {
+    /// Creates a dictionary of words and word counts from a `String`
     func analyzeLine() -> AnyPublisher<[String: Int], Self.Failure> {
         return self
             .map { line in
@@ -31,6 +32,7 @@ extension Publisher where Output == String {
 }
 
 extension Publisher where Output == [[String: Int]] {
+    /// Saves an array of words and word counts to Realm
     func saveToRealm(bookID: String, realmConfiguration: Realm.Configuration = .defaultConfiguration) -> AnyPublisher<Book, Error> {
         self
             .tryMap { dictionaries in

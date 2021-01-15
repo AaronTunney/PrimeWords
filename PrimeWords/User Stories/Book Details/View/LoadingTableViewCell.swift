@@ -19,6 +19,7 @@ class LoadingTableViewCell: UITableViewCell {
     }
 
     private func setupView() {
+        // An activity indicator would be more appropriate here
         textLabel?.text = "Loading..."
     }
 }

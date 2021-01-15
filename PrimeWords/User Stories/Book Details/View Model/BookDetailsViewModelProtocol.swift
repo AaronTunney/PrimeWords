@@ -14,6 +14,5 @@ protocol BookDetailsViewModelProtocol: ObservableObject {
 
     func wordSummary(at index: Int) -> WordSummaryViewModelProtocol
 
-    // Actions
     func analyzeBook()
 }

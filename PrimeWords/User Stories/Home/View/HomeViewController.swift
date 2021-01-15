@@ -24,7 +24,7 @@ class HomeViewController: UISplitViewController {
 extension HomeViewController: UISplitViewControllerDelegate {
     @available(iOS 14.0, *)
     func splitViewController(_ svc: UISplitViewController, topColumnForCollapsingToProposedTopColumn proposedTopColumn: UISplitViewController.Column) -> UISplitViewController.Column {
-        return .primary
+        .primary
     }
 
     func splitViewController(

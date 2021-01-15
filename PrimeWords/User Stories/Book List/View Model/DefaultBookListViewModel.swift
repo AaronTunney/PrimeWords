@@ -34,7 +34,7 @@ class DefaultBookListViewModel {
 
 extension DefaultBookListViewModel: BookListViewModelProtocol {
     func bookSummary(at index: Int) -> BookSummaryViewModelProtocol {
-        return DefaultBookSummaryViewModel(model: bookURLs[index])
+        DefaultBookSummaryViewModel(model: bookURLs[index])
     }
 
     func getBooks() {

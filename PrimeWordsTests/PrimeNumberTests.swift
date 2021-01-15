@@ -17,6 +17,8 @@ class PrimeNumberTests: XCTestCase {
         static let largeComposite = 44_923_181
     }
 
+    // MARK: - Successful tests
+
     func testFirstTenPrimes() {
         K.firstPrimes.forEach { number in
             let isPrime = number.isPrime
@@ -32,6 +34,8 @@ class PrimeNumberTests: XCTestCase {
             XCTAssertFalse(isPrime)
         }
     }
+
+    // MARK: - Performance tests
 
     func testPerformancePrime() {
         let number = K.largePrime

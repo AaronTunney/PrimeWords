@@ -44,6 +44,8 @@ class BookAnalyzerServiceTests: XCTestCase {
         try runBookTest(file: .punctuatedBook)
     }
 
+    // MARK: - Performance tests
+
     func testAnalyzerPerformance() throws {
         let fileURL = try XCTUnwrap(url(for: .completeBook))
 
@@ -98,21 +100,7 @@ class BookAnalyzerServiceTests: XCTestCase {
 
         evaluteBook(book)
     }
-
-    // MARK: - Utility helpers
-
-    private func generateRealmConfiguration() -> Realm.Configuration {
-        return Realm.Configuration(inMemoryIdentifier: UUID().uuidString)
-    }
-
-    private func url(for file: File) -> URL? {
-        guard let path = Bundle(for: type(of: self)).path(forResource: file.rawValue, ofType: "txt") else {
-            return nil
-        }
-
-        return URL(fileURLWithPath: path)
-    }
-
+    
     private func evaluteBook(_ book: Book) {
         book.words.forEach { word in
             switch word.name {
@@ -130,5 +118,19 @@ class BookAnalyzerServiceTests: XCTestCase {
                 XCTFail("\(word.name) has count \(word.count)")
             }
         }
+    }
+
+    // MARK: - Utility helpers
+
+    private func generateRealmConfiguration() -> Realm.Configuration {
+        return Realm.Configuration(inMemoryIdentifier: UUID().uuidString)
+    }
+
+    private func url(for file: File) -> URL? {
+        guard let path = Bundle(for: type(of: self)).path(forResource: file.rawValue, ofType: "txt") else {
+            return nil
+        }
+
+        return URL(fileURLWithPath: path)
     }
 }

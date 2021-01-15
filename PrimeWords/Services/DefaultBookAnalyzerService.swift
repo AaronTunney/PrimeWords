@@ -14,10 +14,6 @@ import RealmSwift
 // A preferable solution would be to read the book in larger chunks and parallelize
 // the analysis work using an operation queue to improve performance.
 class DefaultBookAnalyzerService {
-    private struct K {
-        static let defaultChunkSize = 500
-    }
-
     var book: Book? {
         do {
             let realm = try Realm(configuration: realmConfiguration)
@@ -31,14 +27,11 @@ class DefaultBookAnalyzerService {
     private let realmConfiguration: Realm.Configuration
     private let dispatchQueue: DispatchQueue
     private let bookURL: URL
-    private let chunkSize: Int
 
     init(url: URL,
-         chunkSize: Int = K.defaultChunkSize,
          realmConfiguration: Realm.Configuration = .defaultConfiguration,
          dispatchQueue: DispatchQueue = .global(qos: .utility)) {
         self.bookURL = url
-        self.chunkSize = chunkSize
         self.realmConfiguration = realmConfiguration
         self.dispatchQueue = dispatchQueue
     }
