@@ -80,7 +80,7 @@ The architecture of the solution is as follows:
 - [x] List of files view
 - [x] Progress view
 - [x] Results view
-- [ ] Display primes
+- [x] Display primes
 
 ### Engine
 
