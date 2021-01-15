@@ -6,8 +6,8 @@ target 'PrimeWords' do
   use_frameworks!
 
   # Pods for PrimeWords
-  pod 'SwiftLint'
-  pod 'RealmSwift'
+  pod 'SwiftLint', '~> 0.41.0'
+  pod 'RealmSwift', '~> 10.1.2'
 
   target 'PrimeWordsTests' do
     inherit! :search_paths
