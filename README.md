@@ -42,9 +42,11 @@ The architecture of the solution is as follows:
 - Combine (i.e. Apple's native equivalent of RxSwift)
 - Realm
 - No storyboards or nibs
-- XCTests unit tests only for now
+- XCTests unit tests
 - SFSymbols
-- Support for dark mode, accessibility and localization
+- Dark Mode support
+- Localization support
+- Support for iPhone and iPad
 
 ## Assumptions
 
@@ -61,6 +63,10 @@ The architecture of the solution is as follows:
 - RxSwift/RxCocoa (_I'm still learning!_)
 - XCUI tests
 - Support for < iOS 13
+
+## Known issues
+
+- Punctuation handling isn't perfect
 
 ## Roadmap
 

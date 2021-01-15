@@ -39,6 +39,12 @@ extension DefaultBookDetailsViewModel: BookDetailsViewModelProtocol {
     }
 
     func analyzeBook() {
+        // Take cached answer is available
+        if let book = bookAnalyzer.book {
+            finishAnalysis(book: book)
+            return
+        }
+
         isLoading = true
 
         bookAnalyzer.analyze()
@@ -48,13 +54,16 @@ extension DefaultBookDetailsViewModel: BookDetailsViewModelProtocol {
                     os_log(error: error, log: .bookDetails)
                     self?.isLoading = false
                 case .finished:
-                    guard let strongSelf = self else { return }
-                    strongSelf.words = strongSelf.bookAnalyzer.book?.words.sorted(byKeyPath: #keyPath(Word.count), ascending: false)
-                    strongSelf.isLoading = false
+                    guard let book = self?.bookAnalyzer.book else { return }
+                    self?.finishAnalysis(book: book)
                 }
             } receiveValue: { _ in
             }
             .store(in: &disposables)
     }
 
+    private func finishAnalysis(book: Book) {
+        words = book.words.sorted(byKeyPath: #keyPath(Word.count), ascending: false)
+        isLoading = false
+    }
 }
