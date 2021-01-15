@@ -50,10 +50,7 @@ class BookAnalyzerServiceTests: XCTestCase {
         let realmConfiguration = generateRealmConfiguration()
         let bookAnalyzer = DefaultBookAnalyzerService(url: fileURL, realmConfiguration: realmConfiguration)
 
-        let measureOptions = XCTMeasureOptions()
-        measureOptions.iterationCount = 1
-
-        self.measure(options: measureOptions) {
+        self.measure {
             let bookExpectation = expectation(description: #function)
 
             bookAnalyzer.analyze()
