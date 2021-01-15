@@ -2,7 +2,7 @@
 //  BookDetailsViewController.swift
 //  PrimeWords
 //
-//  Created by Tunney, Aaron (ELS) on 14/01/2021.
+//  Created by Aaron Tunney on 14/01/2021.
 //
 
 import UIKit
@@ -69,8 +69,8 @@ class BookDetailsViewController: UIViewController {
     private func bindViewModel() {
         viewModel.$isLoading
             .receive(on: DispatchQueue.main)
-            .sink(receiveValue: { [weak self] isLoading in
-                os_log("Words loading: %{public}td", log: .bookDetails, type: .debug, isLoading)
+            .sink(receiveValue: { [weak self] _ in
+                os_log("Words loaded: %{public}td", log: .bookDetails, type: .debug, self?.viewModel.wordCount ?? 0)
                 self?.tableView.reloadData()
             })
             .store(in: &disposables)

@@ -2,7 +2,7 @@
 //  BookDetailsRouter.swift
 //  PrimeWords
 //
-//  Created by Tunney, Aaron (ELS) on 14/01/2021.
+//  Created by Aaron Tunney on 14/01/2021.
 //
 
 import UIKit
