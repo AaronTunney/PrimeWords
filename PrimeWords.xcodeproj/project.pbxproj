@@ -32,7 +32,6 @@
 		5374B3EF25AF9C3400F413DD /* DefaultBookListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B3EE25AF9C3400F413DD /* DefaultBookListViewModel.swift */; };
 		5374B3F325AF9C4300F413DD /* BookListViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B3F225AF9C4300F413DD /* BookListViewProtocol.swift */; };
 		5374B3F725AF9C4F00F413DD /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B3F625AF9C4F00F413DD /* BookListViewController.swift */; };
-		5374B3FC25AFA14200F413DD /* MVVMCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B3FB25AFA14200F413DD /* MVVMCommon.swift */; };
 		5374B40225AFA29200F413DD /* BookSummaryViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B40125AFA29200F413DD /* BookSummaryViewModelProtocol.swift */; };
 		5374B40625AFA2F900F413DD /* DefaultBookSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B40525AFA2F900F413DD /* DefaultBookSummaryViewModel.swift */; };
 		5374B40A25AFA9BA00F413DD /* BookSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B40925AFA9BA00F413DD /* BookSummaryTableViewCell.swift */; };
@@ -61,6 +60,7 @@
 		5374B4A725B0E9EF00F413DD /* WordSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B4A625B0E9EF00F413DD /* WordSummaryTableViewCell.swift */; };
 		5374B4B325B0F81500F413DD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5374B4B525B0F81500F413DD /* Localizable.strings */; };
 		5374B4B925B0FC3300F413DD /* completeBook.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5374B4B825B0FC3300F413DD /* completeBook.txt */; };
+		5374B4BF25B1142D00F413DD /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374B4BE25B1142D00F413DD /* LoadingTableViewCell.swift */; };
 		D1E4FB5059868D8823780563 /* Pods_PrimeWordsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6B110AD59DE45B37C400E0 /* Pods_PrimeWordsTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,7 +105,6 @@
 		5374B3EE25AF9C3400F413DD /* DefaultBookListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBookListViewModel.swift; sourceTree = "<group>"; };
 		5374B3F225AF9C4300F413DD /* BookListViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewProtocol.swift; sourceTree = "<group>"; };
 		5374B3F625AF9C4F00F413DD /* BookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
-		5374B3FB25AFA14200F413DD /* MVVMCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMCommon.swift; sourceTree = "<group>"; };
 		5374B40125AFA29200F413DD /* BookSummaryViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSummaryViewModelProtocol.swift; sourceTree = "<group>"; };
 		5374B40525AFA2F900F413DD /* DefaultBookSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBookSummaryViewModel.swift; sourceTree = "<group>"; };
 		5374B40925AFA9BA00F413DD /* BookSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSummaryTableViewCell.swift; sourceTree = "<group>"; };
@@ -134,6 +133,7 @@
 		5374B4A625B0E9EF00F413DD /* WordSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSummaryTableViewCell.swift; sourceTree = "<group>"; };
 		5374B4B425B0F81500F413DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5374B4B825B0FC3300F413DD /* completeBook.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = completeBook.txt; sourceTree = "<group>"; };
+		5374B4BE25B1142D00F413DD /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 		8A8ECE7BDB46358A0654B2C8 /* Pods-PrimeWords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimeWords.release.xcconfig"; path = "Target Support Files/Pods-PrimeWords/Pods-PrimeWords.release.xcconfig"; sourceTree = "<group>"; };
 		C5B7E32EDA714A4F99DBDF37 /* Pods_PrimeWords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimeWords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E80E3D0048B8A8A810E0741C /* Pods-PrimeWordsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimeWordsTests.release.xcconfig"; path = "Target Support Files/Pods-PrimeWordsTests/Pods-PrimeWordsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -237,7 +237,6 @@
 			children = (
 				5374B45625B0A8E500F413DD /* Utilities */,
 				5374B39025AF33A600F413DD /* Extensions */,
-				5374B3FB25AFA14200F413DD /* MVVMCommon.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -409,6 +408,7 @@
 				5374B47625B0DBF300F413DD /* BookDetailsViewProtocol.swift */,
 				5374B47A25B0DC0200F413DD /* BookDetailsViewController.swift */,
 				5374B4A625B0E9EF00F413DD /* WordSummaryTableViewCell.swift */,
+				5374B4BE25B1142D00F413DD /* LoadingTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -658,7 +658,6 @@
 				5374B47725B0DBF300F413DD /* BookDetailsViewProtocol.swift in Sources */,
 				5374B49D25B0E80A00F413DD /* WordSummaryViewModelProtocol.swift in Sources */,
 				5374B3C325AF90B300F413DD /* BooksServiceProtocol.swift in Sources */,
-				5374B3FC25AFA14200F413DD /* MVVMCommon.swift in Sources */,
 				5374B47B25B0DC0200F413DD /* BookDetailsViewController.swift in Sources */,
 				5374B3E725AF9BED00F413DD /* BookListRouter.swift in Sources */,
 				5374B47F25B0DC1500F413DD /* BookDetailsViewModelProtocol.swift in Sources */,
@@ -676,6 +675,7 @@
 				5374B3CF25AF934300F413DD /* Book.swift in Sources */,
 				5374B3E125AF9BD900F413DD /* BookListWireframeProtocol.swift in Sources */,
 				5374B3AD25AF650700F413DD /* HomeViewProtocol.swift in Sources */,
+				5374B4BF25B1142D00F413DD /* LoadingTableViewCell.swift in Sources */,
 				5374B41825B0597600F413DD /* DefaultBookAnalyzerService.swift in Sources */,
 				5374B3A925AF64E900F413DD /* DefaultHomeViewModel.swift in Sources */,
 				5374B4A725B0E9EF00F413DD /* WordSummaryTableViewCell.swift in Sources */,

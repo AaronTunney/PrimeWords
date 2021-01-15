@@ -8,15 +8,18 @@
 import Foundation
 import Combine
 import os.log
+import RealmSwift
 
 class DefaultBookDetailsViewModel {
     weak var view: BookDetailsViewProtocol?
-    var viewModelDidChange: ViewModelDidChangeBinding?
 
-    var progressText: String?
-    private var book: Book? {
-        bookAnalyzer.book
+    @Published var isLoading = true
+
+    var wordCount: Int {
+        words?.count ?? 0
     }
+
+    private var words: Results<Word>?
 
     private let bookAnalyzer: BookAnalyzerServiceProtocol
     private var disposables = Set<AnyCancellable>()
@@ -27,12 +30,8 @@ class DefaultBookDetailsViewModel {
 }
 
 extension DefaultBookDetailsViewModel: BookDetailsViewModelProtocol {
-    var wordCount: Int {
-        book?.words.count ?? 0
-    }
-
     func wordSummary(at index: Int) -> WordSummaryViewModelProtocol {
-        guard let word = book?.words[index] else {
+        guard let word = words?[index] else {
             fatalError("Incorrect usage")
         }
 
@@ -40,21 +39,20 @@ extension DefaultBookDetailsViewModel: BookDetailsViewModelProtocol {
     }
 
     func analyzeBook() {
+        isLoading = true
+
         bookAnalyzer.analyze()
             .sink { [weak self] complete in
                 switch complete {
                 case .failure(let error):
                     os_log(error: error, log: .bookDetails)
+                    self?.isLoading = false
                 case .finished:
-                    self?.progressText = NSLocalizedString("PrimeWords.BookDetails.Progress.Complete", comment: "Analysis Complete!")
                     guard let strongSelf = self else { return }
-                    self?.viewModelDidChange?(.success(strongSelf))
+                    strongSelf.words = strongSelf.bookAnalyzer.book?.words.sorted(byKeyPath: #keyPath(Word.count), ascending: false)
+                    strongSelf.isLoading = false
                 }
-            } receiveValue: { [weak self] response in
-                let format = NSLocalizedString("PrimeWords.BookDetails.Progress.Title", comment: "X lines processed")
-                self?.progressText = String(format: format, response)
-                guard let strongSelf = self else { return }
-                self?.viewModelDidChange?(.success(strongSelf))
+            } receiveValue: { _ in
             }
             .store(in: &disposables)
     }

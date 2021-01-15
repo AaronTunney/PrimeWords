@@ -6,10 +6,10 @@
 //
 
 import Foundation
+import Combine
 
-protocol BookDetailsViewModelProtocol: ViewModelProtocol {
-    var progressText: String? { get }
-
+protocol BookDetailsViewModelProtocol: ObservableObject {
+    var isLoading: Bool { get }
     var wordCount: Int { get }
 
     func wordSummary(at index: Int) -> WordSummaryViewModelProtocol

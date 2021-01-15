@@ -7,7 +7,10 @@
 // MARK: Errors
 
 /* Invalid file path */
-"PrimeWords.Common.Error.invalidFilePath" = "Invalid file path";
+"PrimeWords.Common.Error.InvalidFilePath" = "Invalid file path";
+
+/* Unable to retrive object */
+"PrimeWords.Common.Error.UnableToRetrieveObject" = "Unable to retrieve object";
 
 // MARK: - Book Details
 

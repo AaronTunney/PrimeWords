@@ -64,9 +64,7 @@ class BookAnalyzerServiceTests: XCTestCase {
                     case .finished:
                         bookExpectation.fulfill()
                     }
-                } receiveValue: { value in
-                    print("Lines read: \(value)")
-                }
+                } receiveValue: { _ in }
                 .store(in: &disposables)
 
             wait(for: [bookExpectation], timeout: K.largeTimeout)

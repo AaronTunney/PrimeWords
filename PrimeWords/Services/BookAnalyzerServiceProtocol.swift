@@ -7,9 +7,10 @@
 
 import Foundation
 import Combine
+import RealmSwift
 
 protocol BookAnalyzerServiceProtocol {
     var book: Book? { get }
 
-    func analyze() -> AnyPublisher<Int, Error>
+    func analyze() -> AnyPublisher<ThreadSafeReference<Book>, Error>
 }

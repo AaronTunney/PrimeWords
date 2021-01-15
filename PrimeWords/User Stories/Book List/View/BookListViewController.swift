@@ -6,37 +6,27 @@
 //
 
 import UIKit
+import Combine
 
 class BookListViewController: UIViewController {
     private struct K {
         static let cellName = "Book"
     }
 
-    var viewModel: BookListViewModelProtocol!
+    // One of the downsides of Combine is that its publish/observe model
+    // is based on property wrappers and therefore incompatible with
+    // protocols.
+    var viewModel: DefaultBookListViewModel!
     var router: BookListWireframeProtocol?
 
     private var tableView: UITableView?
+    private var disposables = Set<AnyCancellable>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupViews()
-        configure(viewModel: viewModel)
-
-        // MARK: - View lifecycle
-
-        viewModel.viewModelDidChange = { [weak self] result in
-            switch result {
-            case .success(let viewModel):
-                if let bookListViewModel = viewModel as? BookListViewModelProtocol {
-                    self?.viewModel = bookListViewModel
-                    self?.configure(viewModel: bookListViewModel)
-                }
-                self?.tableView?.reloadData()
-            case .failure(let error):
-                os_log(error: error, log: .bookList)
-            }
-        }
+        bindViewModel()
 
         viewModel.getBooks()
     }
@@ -61,8 +51,15 @@ class BookListViewController: UIViewController {
         self.tableView = tableView
     }
 
-    private func configure(viewModel: BookListViewModelProtocol) {
+    private func bindViewModel() {
         title = viewModel.title
+
+        viewModel.$booksCount
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.tableView?.reloadData()
+            }
+            .store(in: &disposables)
     }
 }
 

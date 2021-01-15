@@ -6,17 +6,14 @@
 //
 
 import Foundation
+import Combine
 
-protocol BookListViewModelProtocol: ViewModelProtocol {
+protocol BookListViewModelProtocol: ObservableObject {
     var title: String { get }
-
     var booksCount: Int { get }
 
     func bookSummary(at index: Int) -> BookSummaryViewModelProtocol
 
-    // Data services
     func getBooks()
-
-    // Navigation
     func bookSelected(at row: Int, router: BookListWireframeProtocol)
 }

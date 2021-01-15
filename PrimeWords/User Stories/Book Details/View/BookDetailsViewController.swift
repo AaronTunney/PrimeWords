@@ -6,34 +6,35 @@
 //
 
 import UIKit
+import Combine
+import os.log
 
 class BookDetailsViewController: UIViewController {
     private struct K {
-        static let cellName = "Word"
+        enum Cell: String {
+            case word
+            case loading
+        }
+
+        static let loadingRowsCount = 1
     }
 
-    var viewModel: BookDetailsViewModelProtocol!
+    // One of the downsides of Combine is that its publish/observe model
+    // is based on property wrappers and therefore incompatible with
+    // protocols.
+    var viewModel: DefaultBookDetailsViewModel!
     var router: BookDetailsWireframeProtocol?
 
     private var tableView: UITableView!
-    private var progressLabel: UILabel!
+    private var loadingSpinner: UIActivityIndicatorView!
+
+    private var disposables = Set<AnyCancellable>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupViews()
-
-        viewModel.viewModelDidChange = { [weak self] result in
-            switch result {
-            case .success(let viewModel):
-                if let bookDetailsViewModel = viewModel as? BookDetailsViewModelProtocol {
-                    self?.configure(viewModel: bookDetailsViewModel)
-                }
-                self?.tableView?.reloadData()
-            case .failure(let error):
-                os_log(error: error, log: .bookList)
-            }
-        }
+        bindViewModel()
 
         viewModel.analyzeBook()
     }
@@ -46,38 +47,33 @@ class BookDetailsViewController: UIViewController {
         view.addSubview(tableView)
         self.tableView = tableView
 
-        let progressLabel = UILabel()
-        progressLabel.adjustsFontForContentSizeCategory = true
-        progressLabel.font = .preferredFont(forTextStyle: .title1)
-        progressLabel.textAlignment = .center
-        progressLabel.textColor = .secondaryLabel
-        progressLabel.backgroundColor = .secondarySystemBackground
+        let loadingSpinner = UIActivityIndicatorView()
+        loadingSpinner.hidesWhenStopped = true
 
-        view.addSubview(progressLabel)
-        self.progressLabel = progressLabel
+        view.addSubview(loadingSpinner)
+        self.loadingSpinner = loadingSpinner
 
         tableView.translatesAutoresizingMaskIntoConstraints = false
 
-        // Layout:
-        // [Table View]
-        // [Progress Label]
         NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
-
-            progressLabel.leadingAnchor.constraint(equalTo: tableView.leadingAnchor),
-            progressLabel.trailingAnchor.constraint(equalTo: tableView.trailingAnchor),
-            progressLabel.topAnchor.constraint(equalTo: tableView.bottomAnchor),
-            progressLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
 
-        tableView.register(WordSummaryTableViewCell.self, forCellReuseIdentifier: K.cellName)
+        tableView.register(WordSummaryTableViewCell.self, forCellReuseIdentifier: K.Cell.word.rawValue)
+        tableView.register(LoadingTableViewCell.self, forCellReuseIdentifier: K.Cell.loading.rawValue)
     }
 
-    private func configure(viewModel: BookDetailsViewModelProtocol) {
-        print("+++ \(viewModel.progressText ?? "no text")")
-        progressLabel.text = viewModel.progressText
+    private func bindViewModel() {
+        viewModel.$isLoading
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] isLoading in
+                os_log("Words loading: %{public}td", log: .bookDetails, type: .debug, isLoading)
+                self?.tableView.reloadData()
+            })
+            .store(in: &disposables)
     }
 }
 
@@ -85,15 +81,35 @@ class BookDetailsViewController: UIViewController {
 
 extension BookDetailsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.wordCount
+        if viewModel.isLoading {
+            return K.loadingRowsCount
+        }
+
+        return viewModel.wordCount
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: K.cellName, for: indexPath) as? WordSummaryTableViewCell else {
+        if viewModel.isLoading {
+            return loadingCell(for: tableView, indexPath: indexPath)
+        }
+
+        return wordCell(for: tableView, indexPath: indexPath)
+    }
+
+    private func wordCell(for tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: K.Cell.word.rawValue, for: indexPath) as? WordSummaryTableViewCell else {
             fatalError("Unable to dequeue reuseable cell")
         }
 
         cell.configure(viewModel: viewModel.wordSummary(at: indexPath.row))
+
+        return cell
+    }
+
+    private func loadingCell(for tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: K.Cell.loading.rawValue, for: indexPath) as? LoadingTableViewCell else {
+            fatalError("Unable to dequeue reuseable cell")
+        }
 
         return cell
     }

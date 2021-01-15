@@ -62,9 +62,9 @@ class DefaultBookAnalyzerService {
 }
 
 extension DefaultBookAnalyzerService: BookAnalyzerServiceProtocol {
-    func analyze() -> AnyPublisher<Int, Error> {
+    func analyze() -> AnyPublisher<ThreadSafeReference<Book>, Error> {
         guard let bookStream = BookStreamer(path: bookURL.path) else {
-            return Fail(outputType: Int.self, failure: PrimeWordsError.invalidFilePath(filePath: bookURL.path))
+            return Fail(outputType: ThreadSafeReference<Book>.self, failure: PrimeWordsError.invalidFilePath(filePath: bookURL.path))
                 .eraseToAnyPublisher()
         }
 
@@ -76,21 +76,14 @@ extension DefaultBookAnalyzerService: BookAnalyzerServiceProtocol {
                 bookToAnalyze.reset()
             }
         } catch {
-            return Fail(outputType: Int.self, failure: error).eraseToAnyPublisher()
+            return Fail(outputType: ThreadSafeReference<Book>.self, failure: error).eraseToAnyPublisher()
         }
-
-        var linesRead = 0
 
         return bookStream.readPublisher()
             .analyzeLine()
-            .collect(chunkSize)
-            .addToRealm(bookID: bookURL.bookID, realmConfiguration: realmConfiguration)
-            .map { _ in
-                linesRead += self.chunkSize
-                return linesRead
-            }
-            .throttle(for: 1.0, scheduler: dispatchQueue, latest: true)
-            .setFailureType(to: Error.self)
+            .collect()
+            .saveToRealm(bookID: bookURL.bookID, realmConfiguration: realmConfiguration)
+            .map { ThreadSafeReference(to: $0) }
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }

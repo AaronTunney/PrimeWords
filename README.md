@@ -56,6 +56,7 @@ The architecture of the solution is as follows:
 - Network-based text file selection
 - iCloud drive support
 - Separating the Book Analyzer into its own framework/Swift package
+- Reporting book analysis progress (thankfully it's quick enough to not be an major issue)
 - Realm migration support
 - RxSwift/RxCocoa (_I'm still learning!_)
 - XCUI tests
@@ -70,11 +71,11 @@ The architecture of the solution is as follows:
 ### Interface
 
 - [x] List of files view
-- [ ] Progress view
-- [ ] Results view
+- [x] Progress view
+- [x] Results view
 - [ ] Display primes
 
 ### Engine
 
-- [ ] Analyse chunk
-- [ ] Read whole book
+- [x] Analyse chunk
+- [x] Read whole book

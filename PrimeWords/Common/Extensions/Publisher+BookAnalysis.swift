@@ -31,34 +31,30 @@ extension Publisher where Output == String {
 }
 
 extension Publisher where Output == [[String: Int]] {
-    func addToRealm(bookID: String, realmConfiguration: Realm.Configuration = .defaultConfiguration) -> AnyPublisher<[[String: Int]], Self.Failure> {
+    func saveToRealm(bookID: String, realmConfiguration: Realm.Configuration = .defaultConfiguration) -> AnyPublisher<Book, Error> {
         self
-            .handleEvents(receiveOutput: { dictionaries in
+            .tryMap { dictionaries in
                 let words: [String: Int] = dictionaries
                     .flatMap { $0 }
                     .reduce(into: [String: Int](), { result, word in
                         result[word.key, default: 0] += word.value
                     })
 
-                do {
-                    let realm = try Realm(configuration: realmConfiguration)
+                let realm = try Realm(configuration: realmConfiguration)
 
-                    let book = realm.object(ofType: Book.self, forPrimaryKey: bookID)
-
-                    try realm.write {
-                        words.forEach { word, count in
-//                            if let word = book?.words.first(where: { $0.name == word }) {
-//                                word.count += count
-//                            } else {
-                                let word = Word(name: word, count: count)
-                                book?.words.append(word)
-//                            }
-                        }
-                    }
-                } catch {
-                    os_log(error: error, log: .bookAnalyzer)
+                guard let book = realm.object(ofType: Book.self, forPrimaryKey: bookID) else {
+                    throw PrimeWordsError.unableToRetrieveObject
                 }
-            })
+
+                try realm.write {
+                    words.forEach { word, count in
+                        let word = Word(name: word, count: count)
+                        book.words.append(word)
+                    }
+                }
+
+                return book
+            }
             .eraseToAnyPublisher()
     }
 }

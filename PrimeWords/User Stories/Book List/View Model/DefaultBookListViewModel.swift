@@ -11,13 +11,18 @@ import os.log
 
 class DefaultBookListViewModel {
     weak var view: BookListViewProtocol?
-    var viewModelDidChange: ViewModelDidChangeBinding?
+
+    @Published var booksCount: Int = 0
 
     let title: String = {
         Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? ""
     }()
 
-    private var bookURLs = [URL]()
+    private var bookURLs = [URL]() {
+        didSet {
+            booksCount = bookURLs.count
+        }
+    }
     private let booksService: BooksServiceProtocol
 
     private var disposables = Set<AnyCancellable>()
@@ -28,10 +33,6 @@ class DefaultBookListViewModel {
 }
 
 extension DefaultBookListViewModel: BookListViewModelProtocol {
-    var booksCount: Int {
-        return bookURLs.count
-    }
-
     func bookSummary(at index: Int) -> BookSummaryViewModelProtocol {
         return DefaultBookSummaryViewModel(model: bookURLs[index])
     }
@@ -49,9 +50,6 @@ extension DefaultBookListViewModel: BookListViewModelProtocol {
                 }
             } receiveValue: { [weak self] output in
                 self?.bookURLs = output.flatMap { $0 }
-
-                guard let strongSelf = self else { return }
-                self?.viewModelDidChange?(.success(strongSelf))
             }
             .store(in: &disposables)
     }
