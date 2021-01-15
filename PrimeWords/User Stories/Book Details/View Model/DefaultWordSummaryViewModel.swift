@@ -15,8 +15,8 @@ class DefaultWordSummaryViewModel: WordSummaryViewModelProtocol {
     let showPrimeNumberLabel: Bool
 
     init(model: Word) {
-        self.title = model.name
+        self.title = model.name.capitalized
         self.count = String(model.count)
-        self.showPrimeNumberLabel = (model.isPrime == true)
+        self.showPrimeNumberLabel = model.isPrime
     }
 }

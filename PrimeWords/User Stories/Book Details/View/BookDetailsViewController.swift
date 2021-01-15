@@ -67,6 +67,8 @@ class BookDetailsViewController: UIViewController {
     }
 
     private func bindViewModel() {
+        title = viewModel.title
+
         viewModel.$isLoading
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] _ in

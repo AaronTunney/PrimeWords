@@ -9,6 +9,7 @@ import Foundation
 import Combine
 
 protocol BookDetailsViewModelProtocol: ObservableObject {
+    var title: String { get }
     var isLoading: Bool { get }
     var wordCount: Int { get }
 

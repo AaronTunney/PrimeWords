@@ -14,6 +14,7 @@ class DefaultBookDetailsViewModel {
     weak var view: BookDetailsViewProtocol?
 
     @Published var isLoading = true
+    var title = NSLocalizedString("PrimeWords.BookDetails.Title", comment: "Results")
 
     var wordCount: Int {
         words?.count ?? 0

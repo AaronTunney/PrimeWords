@@ -12,12 +12,13 @@ import RealmSwift
 class Word: Object {
     dynamic var name: String = ""
     dynamic var count: Int = 0
-    dynamic var isPrime: Bool?
+    dynamic var isPrime: Bool = false
 
     convenience init(name: String, count: Int) {
         self.init()
 
         self.name = name
         self.count = count
+        self.isPrime = count.isPrime
     }
 }

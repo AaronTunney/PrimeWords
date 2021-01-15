@@ -10,7 +10,7 @@ import UIKit
 class WordSummaryTableViewCell: UITableViewCell {
     private struct K {
         static let margin: CGFloat = 8
-        static let iconWidth: CGFloat = 34
+        static let iconWidth: CGFloat = 20
     }
 
     private var titleLabel: UILabel!
@@ -61,11 +61,11 @@ class WordSummaryTableViewCell: UITableViewCell {
             primeIconView.heightAnchor.constraint(equalToConstant: K.iconWidth),
             primeIconView.widthAnchor.constraint(equalToConstant: K.iconWidth),
             primeIconView.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
-            primeIconView.topAnchor.constraint(equalTo: titleLabel.topAnchor),
+            primeIconView.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
 
-            titleLabel.leadingAnchor.constraint(equalTo: primeIconView.leadingAnchor, constant: K.margin),
+            titleLabel.leadingAnchor.constraint(equalTo: primeIconView.trailingAnchor, constant: K.margin),
             titleLabel.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor),
+            titleLabel.bottomAnchor.constraint(greaterThanOrEqualTo: contentView.layoutMarginsGuide.bottomAnchor),
 
             countLabel.leadingAnchor.constraint(greaterThanOrEqualTo: titleLabel.trailingAnchor, constant: K.margin),
             countLabel.topAnchor.constraint(equalTo: titleLabel.topAnchor),
@@ -77,5 +77,7 @@ class WordSummaryTableViewCell: UITableViewCell {
     func configure(viewModel: WordSummaryViewModelProtocol) {
         titleLabel?.text = viewModel.title
         countLabel.text = viewModel.count
+        primeIconView.image = UIImage(systemName: viewModel.primeNumberIconName)
+        primeIconView.isHidden = !viewModel.showPrimeNumberLabel
     }
 }
